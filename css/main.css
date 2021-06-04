@@ -1,0 +1,818 @@
+/******************************
+Base Element Styles
+*******************************/
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Raleway", Sans-Serif;
+  font-size: 1rem;
+  background-color: #fdfaf3;
+}
+
+h1,
+h2,
+h3,
+h4,
+a {
+  font-family: "Vollkorn", Serif;
+}
+
+h1,
+h2,
+h3,
+.logo,
+.waiter,
+a {
+  line-height: 1.6;
+}
+
+h4 {
+  line-height: 1;
+}
+
+h1,
+h2,
+h3 {
+  text-align: center;
+  letter-spacing: 5px;
+}
+/* These rules make my nav buttons link to the correct areas on the screen */
+h2 {
+  position: relative;
+}
+
+h2 .about {
+  position: absolute;
+  top: -125px;
+}
+
+h4 {
+  position: relative;
+}
+
+h4 .menu {
+  position: absolute;
+  top: -130px;
+}
+
+h4 .contact {
+  position: absolute;
+  top: -130px;
+}
+
+h4 {
+  font-size: 1.25rem;
+  text-align: left;
+  letter-spacing: 5px;
+}
+
+p.text-grey {
+  color: #2b2a2a;
+  font-size: 1.2rem;
+}
+
+p.text-blue {
+  color: #1414b0;
+  font-size: 1.25rem;
+}
+/* ----------------------------- Page Elements -------------------------- */
+.header {
+  padding: 10px 0;
+  margin: 0 auto;
+  max-width: 1150px;
+  background-color: #eed79c;
+  border-radius: 5px;
+  box-shadow: inset 0 0 5px 5px rgba(90, 71, 6, 0.8);
+  /* border: 1px solid red; */
+}
+
+/* Antonio's logo in the header styles */
+.logo {
+  font-size: 1.75rem;
+  font-weight: 900;
+  letter-spacing: 0.1rem;
+  color: #1414b0;
+  width: 190px;
+  background-size: contain;
+  white-space: nowrap;
+  overflow: hidden;
+  margin-left: 50px;
+  padding-top: 0;
+  /* border: 1px solid greenyellow; */
+}
+
+/* ---- Chef svg Logo image positioning ---- */
+.header {
+  position: relative;
+}
+
+.chef {
+  position: absolute;
+  top: 1rem;
+  left: 2px;
+}
+
+.waiter {
+  position: absolute;
+  top: 4.5rem;
+  /* using the calc medthod the  waiter icon will change position based on viewport width size */
+  left: calc(100vw - 64%);
+}
+
+.foodCart {
+  position: absolute;
+  top: 0.3rem;
+  right: 32rem;
+}
+
+/* ---- Navigation Styles---- */
+.nav {
+  list-style: none;
+  /* border: 1px solid yellow; */
+}
+
+.nav li {
+  margin: 12px 0 12px 18px;
+}
+
+.top,
+.nav li a {
+  text-decoration: none;
+  color: #2727e2;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  padding: 8px 16px 7px;
+}
+
+.nav li a:hover {
+  background-color: #c28434;
+  color: black;
+  border-radius: 50% 20% / 10% 40%;
+  transition: 300ms ease-in-out;
+}
+
+/* This rule gives the contact button "last-child" .313rem of right margin. 
+This prevents the button from being right up against the header banner  */
+.nav li:last-child {
+  margin-right: 0.313rem;
+}
+
+/* position hamburger icon to right of viewport and style */
+
+.icon {
+  position: absolute;
+  top: 2rem;
+  /* using calc medthod the  hamburger icon will change position based on viewport width size */
+  left: calc(100vw - 12%);
+}
+
+.fa-bars {
+  color: #c28434;
+  padding: 0.15rem;
+  border: solid 1px #afa6a6;
+  font-size: 1.563rem;
+}
+
+.fa-bars:hover {
+  background-color: #fb8804;
+  color: black;
+}
+a.icon {
+  text-decoration: none;
+}
+/* ------------------------------- Page Elements --------------------------- */
+/* position text in the main picture and style */
+.main-images {
+  position: relative;
+}
+
+.display-bottommiddle {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 0%);
+}
+
+.display-middle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.text-white {
+  color: #fff;
+  text-shadow: 2px 3px 5px rgba(1, 7, 19, 0.5);
+}
+
+.bg-color {
+  background-color: rgba(27, 26, 26, 0.1);
+  border-radius: 3px;
+}
+
+.imgResponse {
+  display: block;
+  width: 100%;
+  max-width: 1100px;
+  height: auto;
+  margin: 0 auto;
+  padding: 0.7em;
+  border: solid 1px #d1d0d0;
+  border-radius: 0 0 5px 5px;
+}
+
+.feat-img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  padding: 0.7em;
+  border: solid 1px #7e7c7c;
+  border-radius: 5px;
+  /* background-color: rgba(241, 234, 234, 0.8); */
+}
+
+.feat-img-1 {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  padding: 0.7em;
+  margin: 0 auto;
+  border: solid 1px #7e7c7c;
+  border-radius: 5px;
+}
+
+.feat-img-2 {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  padding: 0.7em;
+  margin: 0 auto;
+  border: solid 1px #d1d0d0;
+  border-radius: 5px;
+}
+
+.feat-img-3 {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  padding: 0.7em;
+  margin: 0 auto;
+  border: solid 1px #d1d0d0;
+  border-radius: 5px;
+}
+
+.row {
+  width: 100%;
+  max-width: 1100px;
+  height: auto;
+  margin: 0 auto;
+}
+
+.col,
+.menu-picture-col {
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
+  padding-bottom: 1.5rem;
+  margin-left: 0;
+  /* border: 1px solid rgb(224, 195, 31); */
+  border-bottom: 0.031rem solid rgb(214, 212, 212);
+  border-top: 0.031rem solid rgb(214, 212, 212);
+}
+
+.navtop {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1;
+}
+
+.contact-form-section-picture h4 {
+  text-align: center;
+  line-height: 1.4;
+}
+
+.contact-form-section-picture p::first-line {
+  line-height: 1;
+  font-weight: bold;
+}
+
+.contact-form-section-picture p {
+  color: #706767;
+  line-height: 1;
+}
+
+.text-left {
+  align-self: flex-start;
+}
+
+.contact-banner-text-h2 {
+  text-align: left;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.contact-banner-text-span {
+  font-size: 1rem;
+  font-family: "Raleway", Sans-Serif;
+}
+
+.fa-bread-slice {
+  color: #674023;
+  padding: 0 0.5rem 0 0.25rem;
+  font-size: 2rem;
+}
+
+.banner-section,
+.contact-form-section,
+.contact-form-section-picture {
+  background: #f8f8f8 url(../img/pattern.jpg) left top repeat;
+  box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.05) inset,
+    0 -5px 15px 0 rgba(0, 0, 0, 0.05) inset;
+}
+.about-section-content,
+.about-section-picture,
+.about-section-content-picture,
+.menu-section-content,
+.menu-section-content-picture {
+  background: #f8f8f8 url(../img/sepia-marble-paperA.jpg) left top repeat;
+  filter: sepia(15%);
+}
+
+.form-input {
+  padding: 8px;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  width: 100%;
+}
+
+.form-button {
+  border: none;
+  padding: 8px 16px;
+  vertical-align: middle;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  white-space: nowrap;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  background-color: #a97142;
+}
+
+.form-button:hover {
+  color: #fff;
+  background-color: #1414b0;
+  border-radius: 5px;
+}
+
+.main-footer {
+  width: 100%;
+  max-width: 1100px;
+  height: auto;
+  margin: 0 auto;
+  text-align: center;
+  padding: 2em 0;
+  background: #f1dfaf;
+}
+
+/* This class rule sticks the footer to bottom of the veiwport*/
+.wrap {
+  min-height: calc(100vh - 110px);
+}
+
+/******************************
+Flexbox Layout Mobile
+*******************************/
+
+.header,
+.nav,
+.row,
+.col,
+.menu-picture-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  justify-content: space-between;
+}
+
+.nav {
+  flex: 1;
+  justify-content: space-around;
+}
+
+/* ================================================= 
+   Media Queries
+==================================================== */
+
+/* Target viewport sizes less than 702px
+This CSS will apply styles only if your browser's 
+viewport width is equal to or narrower than 702px: */
+
+@media (max-width: 702px) {
+  h2 .about {
+    position: absolute;
+    top: -300px;
+  }
+
+  h4 .menu {
+    position: absolute;
+    top: -240px;
+  }
+
+  h4 .contact {
+    position: absolute;
+    top: -240px;
+  }
+
+  .nav {
+    padding: 12px 0 12px 0;
+    margin: 0 0 0 -10px;
+  }
+
+  .nav li a:hover {
+    border-radius: 5px;
+    transition: 400ms ease-in-out;
+  }
+  /* the class navControl is controlled by javascript when the hamburger is onclicked */
+  .nav.navControl {
+    display: none;
+  }
+  /* the class waiterControl is controlled by javascript when the hamburger is onclicked */
+  .waiter.waiterControl {
+    display: none;
+  }
+  .main-images {
+    display: none;
+  }
+
+  .hide-small {
+    display: none;
+  }
+
+  .about-section-top {
+    margin-top: 22rem;
+  }
+
+  /* The class aboutSectionControl is controlled by javascript when hamburger is onclicked */
+  .about-section-top.aboutSectionControl {
+    margin-top: 11rem;
+  }
+
+  .contact-banner-text-span {
+    display: block;
+    padding-left: 3.2rem;
+  }
+
+  .feat-img-1,
+  .feat-img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    padding: 0.7em;
+    margin: 0 auto;
+    border: solid 1px #7e7c7c;
+    border-radius: 5px;
+  }
+
+  .form-button {
+    display: block;
+    margin: 0 auto;
+  }
+
+  .about-section-content {
+    background: url(../img/pexels-waldemar-brandt-2290070blur.jpg) center /
+      cover no-repeat;
+    color: white;
+    /* filter: sepia(50%); */
+    filter: grayscale(50%);
+  }
+}
+
+/* Target viewport sizes 703px and wider 
+This CSS will apply styles only if your browser's 
+viewport width is equal to or wider than 703px:*/
+
+@media all and (min-width: 703px) {
+  /* nav layout medium to large sizes*/
+  .header,
+  .nav {
+    flex-direction: row;
+  }
+  /* Remove hamburger icon in medium to large veiwports */
+  .icon {
+    display: none;
+  }
+  /* Remove waiter icon in medium to large veiwports */
+  .waiter {
+    display: none;
+  }
+
+  .row {
+    flex-direction: row;
+    /* flex-wrap: wrap; */
+    /* flex-flow: row wrap; */
+    /* justify-content: space-between; */
+  }
+
+  .col {
+    justify-content: flex-start;
+    /* border-bottom: 1px solid rgb(167, 165, 165); */
+  }
+
+  .about-section-picture {
+    width: 33.33%;
+  }
+
+  .about-section-content {
+    width: 33.33%;
+    order: -1; /* The order property specifies the order of a flexible item relative to the rest of the flexible items inside the same container. */
+  }
+
+  .about-section-content-picture {
+    width: 33.33%;
+  }
+  .menu-picture-col {
+    justify-content: center;
+    align-items: center;
+  }
+  .menu-section-content {
+    width: 70%;
+    order: 1; /* The order property specifies the order of a flexible item relative to the rest of the flexible items inside the same container. */
+  }
+
+  .menu-section-content-picture {
+    width: 30%;
+  }
+
+  .banner-section {
+    width: 100%;
+  }
+
+  .contact-form-section {
+    width: 50%;
+  }
+
+  .contact-form-section-picture {
+    width: 50%;
+  }
+}
+
+/* Target a viewport range wider than 701px and narrower than 992px 
+This CSS will apply styles only if your browser's 
+viewport width is equal to or wider than 701px
+AND equal to or narrower than 991px:*/
+
+@media (max-width: 992px) and (min-width: 701px) {
+  .hide-medium {
+    display: none;
+  }
+
+  main p h4 {
+    text-align: justify;
+  }
+}
+
+/* Target viewport sizes less than 1030px
+This CSS will apply styles only if your browser's 
+viewport width is equal to or narrower than 1030px: */
+
+@media (max-width: 1030px) {
+  .foodCart {
+    display: none;
+  }
+}
+
+/* Target viewport sizes 1030px and wider 
+This CSS will apply styles only if your browser's 
+viewport width is equal to or wider than 1030pxpx:*/
+@media all and (min-width: 1030px) {
+  /* flex-none to prevent the nav flex items from growing or shrinking */
+  .nav {
+    flex: none;
+  }
+
+  .about-section-picture {
+    width: 25%;
+  }
+
+  .about-section-content {
+    width: 50%;
+    order: initial; /* The order property specifies the order of a flexible item relative to the rest of the flexible items inside the same container. */
+  }
+
+  .about-section-content-picture {
+    width: 25%;
+  }
+
+  .menu-section-content {
+    width: 70%;
+    order: -1; /* The order property specifies the order of a flexible item relative to the rest of the flexible items inside the same container. */
+  }
+
+  .menu-section-content-picture {
+    width: 30%;
+  }
+
+  .banner-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-form-section {
+    flex: 60%;
+  }
+
+  .contact-form-section-picture {
+    flex: 40%;
+  }
+}
+
+/* justify-content: space-between for new nav bar*/
+/* @media (min-width: 1025px) {
+
+  .header {
+    flex-direction: row;
+    justify-content: space-between;
+    
+  }
+
+
+} */
+
+/* This rule ajusts the width of the Header bar */
+
+/* @media all and (min-width: 1030px) {
+  .header,
+  .response
+     {
+    width: 1100px; 
+    min-width: 768px;
+  }
+ 
+    
+
+} */
+
+/* Utilites */
+.t-large {
+  font-size: 1.125rem;
+}
+
+.t-xlarge {
+  font-size: 1.5rem;
+}
+.t-xxlarge {
+  font-size: 2.25rem;
+}
+.t-xxxlarge {
+  font-size: 3rem;
+}
+.t-jumbo {
+  font-size: 4rem;
+}
+
+.padding-8 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.padding-16 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.padding-20 {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+
+.padding-32 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+.padding-36 {
+  padding-top: 2.25rem;
+  padding-bottom: 2.25rem;
+}
+.padding-40 {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+.padding-top-20 {
+  padding-top: 1.25rem;
+}
+
+.padding-top-24 {
+  padding-top: 1.5rem;
+}
+
+.padding-top-30 {
+  padding-top: 1.875rem;
+}
+
+.padding-top-32 {
+  padding-top: 2rem;
+}
+
+.padding-bottom-8 {
+  padding-bottom: 0.5rem;
+}
+
+.padding-bottom-16 {
+  padding-bottom: 1rem;
+}
+
+.padding-bottom-20 {
+  padding-bottom: 1.25rem;
+}
+
+.padding-bottom-24 {
+  padding-bottom: 1.5rem;
+}
+
+.padding-bottom-30 {
+  padding-bottom: 1.875rem;
+}
+
+.padding-bottom-32 {
+  padding-bottom: 2rem;
+}
+.padding-RL-8 {
+  padding: 0 0.5rem;
+}
+.padding-RL-16 {
+  padding: 0 1rem;
+}
+.animate-fading-10 {
+  animation: fading 10s infinite;
+}
+
+.animate-fading-5 {
+  animation: fading 5s infinite;
+}
+
+@keyframes fading {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.animate-opacity {
+  animation: opac 0.8s;
+}
+
+@keyframes opac {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-opacity-2 {
+  animation: opac 2s;
+}
+
+@keyframes opac {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-opacity-m {
+  animation: opac 1s;
+}
+
+@keyframes opac {
+  from {
+    opacity: 0.9;
+  }
+
+  to {
+    opacity: 1.5;
+  }
+}
+.opacity-min {
+  opacity: 0.75;
+}

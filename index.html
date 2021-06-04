@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Antonio's Cafe</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Raleway:500|Vollkorn:400i"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <script
+      src="https://kit.fontawesome.com/95583fc785.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <div class="wrap" id="top">
+      <h2 id="home" style="margin-top: -20px"></h2>
+
+      <!-- Header banner with nav controls, logo and images -->
+      <div class="navtop">
+        <header class="header">
+          <img
+            class="foodCart"
+            id="Food Cart"
+            src="img/Food Cart.svg"
+            alt="Waiter"
+          />
+          <img class="waiter" id="waiter" src="img/Waiter.svg" alt="Waiter" />
+          <img class="chef" src="img/Chef.svg" alt="Chef" />
+          <h1 class="logo">Antonio's Cafe</h1>
+
+          <!-- Hamburger Control Using JavaScript onclick function -->
+          <!-- From MDN JavaScript URIs - javascript:void(0) - Means Click here to do nothing - in other words when hamburger is clicked don't move to another section of the web page-->
+          <a
+            href="javascript:void(0);"
+            class="icon"
+            onclick="hamburgerControl()"
+          >
+            <i class="fas fa-bars"></i>
+          </a>
+          <ul class="nav" id="myTopNav">
+            <li class="hide-small"><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </header>
+      </div>
+
+      <!-- Main picture -->
+      <div class="main-images" style="padding-top: 6.4rem">
+        <div class="display-middle text-white hide-small">
+          <h1 class="bg-color padding-RL-8" style="font-size: 5vmax">
+            Antonio's Cafe
+          </h1>
+          <p
+            class="bg-color"
+            style="letter-spacing: 0.1rem; text-align: center; font-size: 2vmax"
+          >
+            <b>The Best Fine Dining in the Ville.</b>
+          </p>
+        </div>
+        <img
+          class="imgResponse mySlidesC"
+          src="img/pexels-waldemar-brandt-2290070blur.jpg"
+          alt="Cafe Bar Setting"
+        />
+        <img
+          class="imgResponse mySlidesC"
+          src="img/pexels-daria-shevtsova-704982BB.jpg"
+          alt="Cafe Bar Setting"
+        />
+        <img
+          class="imgResponse mySlidesC"
+          src="img/pexels-kaboompics-com-6267BB.jpg"
+          alt="Cafe Bar Setting"
+        />
+        <img
+          class="imgResponse mySlidesC"
+          src="img/pexels-lisa-fotios-776538BB.jpg"
+          alt="Cafe Bar Setting"
+        />
+        <img
+          class="imgResponse mySlidesC"
+          src="img/pexels-sindre-strøm-1398266BB.jpg"
+          alt="Cafe Bar Setting"
+        />
+      </div>
+      <!-- Main picture End-->
+
+      <!-- About Section -->
+
+      <!--about-section picture-->
+      <div class="row">
+        <div class="about-section-picture col hide-small">
+          <h2>Great food</h2>
+          <img
+            class="feat-img mySlidesB animate-opacity"
+            src="img/pexels-chevanon-photography-323682c.jpg"
+            alt="Drinks and eats"
+            width="300"
+            height="400"
+          />
+          <img
+            class="feat-img mySlidesB animate-opacity"
+            src="img/pexels-ekaterina-bolovtsova-5702789A.jpg"
+            alt="Drinks and eats"
+            width="300"
+            height="400"
+          />
+          <img
+            class="feat-img mySlidesB animate-opacity"
+            src="img/pexels-flo-dahm-541216A.jpg"
+            alt="Drinks and eats"
+            width="300"
+            height="400"
+          />
+          <img
+            class="feat-img mySlidesB animate-opacity"
+            src="img/pexels-polina-kovaleva-5420369A.jpg"
+            alt="Drinks and eats"
+            width="300"
+            height="400"
+          />
+        </div>
+        <!--/end about-section picture-->
+
+        <!--about-section content-->
+        <div class="about-section-content col">
+          <h2 class="about-section-top" id="aboutSection">
+            <span class="about" id="about"></span>About the Cafe
+          </h2>
+          <p>Everything in this cafe is worth waiting in line for.</p>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum,
+            fugit neque, architecto repellat suscipit sint, omnis qui temporibus
+            ullam labore dolorum. Eaque voluptatibus deserunt itaque qui a
+            cupiditate hic labore. Lorem ipsum dolor sit, amet consectetur
+            adipisicing elit. Enim laborum quisquam, dolores dolorem
+            exercitationem perspiciatis ipsam praesentium, pariatur sit .
+          </p>
+          <p class="hide-medium">
+            Cake sesame snaps sweet tart candy canes tiramisu I love oat cake
+            chocolate bar. Jelly beans pastry browniesugar plum pastry bear claw
+            tiramisu tootsie roll. Tootsie roll wafer I love chocolate donuts.
+            sapiente nihil, similique minus possimus magnam hic reprehenderit.
+            Explicabo, iure iste
+          </p>
+        </div>
+        <!--end about-section content-->
+
+        <!--about section content picture-->
+        <div class="about-section-content-picture col">
+          <h2>Fine Dinning</h2>
+          <img
+            class="feat-img mySlidesA animate-opacity-2"
+            src="img/pexels-rajesh-tp-1624487b.jpg"
+            alt="Drinks and eats"
+            width="300"
+            height="400"
+          />
+          <img
+            class="feat-img mySlidesA animate-opacity-2"
+            src="img/pexels-gerald-jake-abangan-2689419A.jpg"
+            alt="Drinks and eats"
+            width="300"
+            height="400"
+          />
+          <img
+            class="feat-img mySlidesA animate-opacity-2"
+            src="img/pexels-mister-mister-3434523A.jpg"
+            alt="Drinks and eats"
+            width="300"
+            height="400"
+          />
+          <img
+            class="feat-img mySlidesA animate-opacity-2"
+            src="img/pexels-partha-sekhar-borah-1988624A.jpg"
+            alt="Drinks and eats"
+            width="300"
+            height="400"
+          />
+        </div>
+        <!--end about-section-content-picture-->
+      </div>
+
+      <!-- Menu Section -->
+      <!--menu section content-->
+      <div class="row">
+        <h4><span class="menu" id="menu"></span></h4>
+        <div class="menu-section-content col">
+          <h2>Le Menu</h2>
+          <!--/Insert JavaScript Multidimensional Array Food Items into main element-->
+          <main></main>
+        </div>
+        <!--end menu-section-content-picture-->
+
+        <!--menu section content picture-->
+        <div class="menu-section-content-picture menu-picture-col">
+          <h2>Bon Appétit</h2>
+          <img
+            class="feat-img-1"
+            src="img/pexels-william-choquette-2641886a.jpg"
+            alt="Drinks and eats"
+            width="300"
+            height="400"
+          />
+        </div>
+        <!--end menu-section-content-picture-->
+      </div>
+      <!--end menu-section-content-->
+
+      <!-- contact Banner Section -->
+      <div class="row">
+        <h4><span class="contact" id="contact"></span></h4>
+        <div class="banner-section col padding-16">
+          <h2 class="contact-banner-text-h2">
+            <i class="fas fa-bread-slice"></i>Contact Us/<span
+              class="contact-banner-text-span"
+              ><i>Make your reservations here</i></span
+            >
+          </h2>
+        </div>
+      </div>
+      <!-- end contact Banner Section -->
+
+      <!-- contact Form Section -->
+      <div class="row">
+        <div class="contact-form-section col">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+            eiusmod tempor incididunt ut labore et. Ut wisi enim ad minim
+            veniam, quis nostrud exerci tation ullamcorper
+            <a href="">suscipit lobortis</a> nisl ut aliquip ex ea commodo
+            consequat.
+          </p>
+          <p class="hide-small">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+            eiusmod tempor incididunt ut labore et. Ut wisi enim ad minim
+            veniam, quis nostrud exerci tation ullamcorper
+            <a href="javascript:void(0);">suscipit lobortis</a> nisl ut aliquip
+            ex ea commodo consequat.
+          </p>
+          <p class="hide-medium hide-small">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+            eiusmod tempor incididunt ut labore et. Ut wisi enim ad minim
+            veniam, quis nostrud exerci tation ullamcorper
+            <a href="">suscipit lobortis</a> nisl ut aliquip ex ea commodo
+            consequat.
+          </p>
+
+          <form id="myForm" action="/action_page.php" target="_blank">
+            <p>
+              <input
+                class="form-input padding-16"
+                type="text"
+                placeholder="Name"
+                required
+                name="Name"
+              />
+            </p>
+            <p>
+              <input
+                class="form-input padding-16"
+                type="number"
+                placeholder="How many people"
+                required
+                name="People"
+              />
+            </p>
+            <p>
+              <input
+                class="form-input padding-16"
+                type="datetime-local"
+                placeholder="Date and time"
+                required
+                name="date"
+                value="2021-02-18T16:00"
+              />
+            </p>
+            <p>
+              <input
+                class="form-input padding-16"
+                type="text"
+                placeholder="Message \ Special requirements"
+                required
+                name="Message"
+              />
+            </p>
+            <p>
+              <button class="form-button" type="submit">SEND MESSAGE</button>
+            </p>
+          </form>
+        </div>
+        <!-- end contact Form Section -->
+
+        <!-- contact Form Section picture-->
+        <div class="contact-form-section-picture col padding-bottom-16">
+          <h4>We Are Here</h4>
+          <img
+            class="feat-img-2"
+            src="img/mapd.jpg"
+            alt="Resturant Location"
+            width="300"
+            height="300"
+          />
+          <h4 class="hide-small">We Are Here</h4>
+          <img
+            class="feat-img-3 hide-small"
+            src="img/mapd.jpg"
+            alt="Resturant Location"
+            width="300"
+            height="300"
+          />
+          <h4 class="text-left">Address</h4>
+          <p>
+            Via Principe Amedeo 9 <br />
+            10100, Torino, TO, Ky
+          </p>
+          <p>Phone: 0039 333 12 68 347</p>
+        </div>
+        <!-- end contact form Section picture-->
+      </div>
+      <!--/End Contact Section-->
+    </div>
+    <!--/ End wrap-->
+    <!--/footer-->
+    <footer class="main-footer">
+      <span>&copy;2021 In the Ville - Antonio's Cafe.</span><br />
+      <a class="top" href="#top">Back to top &raquo;</a>
+    </footer>
+
+    <script src="js/catering.js"></script>
+  </body>
+</html>
