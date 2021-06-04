@@ -46,7 +46,7 @@ h2 {
 
 h2 .about {
   position: absolute;
-  top: -125px;
+  top: -105px;
 }
 
 h4 {
@@ -55,12 +55,12 @@ h4 {
 
 h4 .menu {
   position: absolute;
-  top: -130px;
+  top: -105px;
 }
 
 h4 .contact {
   position: absolute;
-  top: -130px;
+  top: -105px;
 }
 
 h4 {
@@ -135,7 +135,7 @@ p.text-blue {
 }
 
 .nav li {
-  margin: 12px 0 12px 18px;
+  margin: 30px 0 12px 18px;
 }
 
 .top,
@@ -284,7 +284,7 @@ a.icon {
   border-top: 0.031rem solid rgb(214, 212, 212);
 }
 
-.navtop {
+.navTopFixed {
   position: fixed;
   width: 100%;
   top: 0;
@@ -417,17 +417,17 @@ viewport width is equal to or narrower than 702px: */
 @media (max-width: 702px) {
   h2 .about {
     position: absolute;
-    top: -300px;
+    top: -340px;
   }
 
   h4 .menu {
     position: absolute;
-    top: -240px;
+    top: -325px;
   }
 
   h4 .contact {
     position: absolute;
-    top: -240px;
+    top: -325px;
   }
 
   .nav {
@@ -541,6 +541,7 @@ viewport width is equal to or wider than 703px:*/
     justify-content: center;
     align-items: center;
   }
+
   .menu-section-content {
     width: 70%;
     order: 1; /* The order property specifies the order of a flexible item relative to the rest of the flexible items inside the same container. */

@@ -19,7 +19,7 @@ function hamburgerControl() {
     aboutSection.className = "about-section-top"; // aboutSection.className changes class back to "about-section-top" affects margin-top when the hamburger icon is clicked see main.css
   }
 
-  // This decision displays on and off the waiter logo in mobile, the class "waiterControl" is dynamically inserted into html's element to accomplish this control waiter.className stores the elements class name that could be "waiter" or "waiter waiterControl" when the hamburger icon is clicked.
+  /* This decision displays on and off the waiter logo in mobile, the class "waiterControl" is dynamically inserted into html's element to accomplish this control waiter.className stores the elements class name that could be "waiter" or "waiter waiterControl" when the hamburger icon is clicked.*/
   if (waiter.className === "waiter") {
     waiter.className += " waiterControl"; // waiter.className changes class to "waiter waiterControl" this removes the waiter icon when the hamburger icon is clicked see main.css
   } else {
@@ -30,50 +30,83 @@ function hamburgerControl() {
 // Food Item Multidimensional Array
 
 // Create arrays to hold food category and items
-const foodlist = [
-  [
-    "Bread Basket",
-    "Assortment of fresh baked fruit breads and muffins",
-    "5.50",
-  ],
-  [
-    "Honey Almond Granola with Fruits",
-    "Natural cereal of honey toasted oats, raisins, almonds and dates",
-    "7.00",
-  ],
-  ["Belgian Waffle", "Vanilla flavored batter with malted flour", "7.50"],
-  [
-    "Scrambled eggs",
-    "Scrambled eggs,roasted red pepper, garlic, with green onions",
-    "7.50",
-  ],
-  ["Blueberry Pancakes", "With syrup, butter and lots of berries", "8.50"],
-];
+// const foodlist = [
+//   [
+//     "Bread Basket",
+//     "Assortment of fresh baked fruit breads and muffins",
+//     "5.50",
+//   ],
+//   [
+//     "Honey Almond Granola with Fruits",
+//     "Natural cereal of honey toasted oats, raisins, almonds and dates",
+//     "7.00",
+//   ],
+//   ["Belgian Waffle", "Vanilla flavored batter with malted flour", "7.50"],
+//   [
+//     "Scrambled eggs",
+//     "Scrambled eggs,roasted red pepper, garlic, with green onions",
+//     "7.50",
+//   ],
+//   ["Blueberry Pancakes", "With syrup, butter and lots of berries", "8.50"],
+// ];
 
-// Function to iterate through the foodlist array and create html for the food items and store offer price
-function createListItems(arr) {
-  let items = "";
+// Function to iterate through the foodlist array and create html for the food items and store offer price using template literals
+// function createListItems(arr) {
+//   let items = "";
 
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i][2] === "5.50") {
-      const newPrice = 5.5 - 5.5 * 0.2; // 20% off store offer
-      items += `<h4>${arr[i][0]}</h4> <p class="text-grey">${
-        arr[i][1]
-      } <strong><s>${
-        arr[i][2]
-      }</s></strong> <strong style = 'color:#1414b0;'>${newPrice.toFixed(
-        2
-      )}</strong></p>`;
-    } else {
-      items += `<h4>${arr[i][0]}</h4> <p class="text-grey">${arr[i][1]} <strong>${arr[i][2]}</strong></p>`;
-    }
-  }
-  return items;
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i][2] === "5.50") {
+//       const newPrice = 5.5 - 5.5 * 0.2; // 20% off store offer
+//       items += `<h4>${arr[i][0]}</h4> <p class="text-grey">${
+//         arr[i][1]
+//       } <strong><s>${
+//         arr[i][2]
+//       }</s></strong> <strong style = 'color:#1414b0;'>${newPrice.toFixed(
+//         2
+//       )}</strong></p>`;
+//     } else {
+//       items += `<h4>${arr[i][0]}</h4> <p class="text-grey">${arr[i][1]} <strong>${arr[i][2]}</strong></p>`;
+//     }
+//   }
+//   return items;
+// }
+
+getUsers();
+function getUsers() {
+  const myRequest = new Request("food.json");
+  fetch(myRequest)
+    .then((res) => res.json())
+    .then((data) => {
+      let items = "";
+      data.forEach((user) => {
+        if (user.foodPrice === "5.50") {
+          const newPrice = 5.5 - 5.5 * 0.2; // 20% off store offer
+          items += `
+
+              <h4>${user.foodHeader}</h4> 
+              <p class="text-grey">${user.foodName} <strong><s>${
+            user.foodPrice
+          }</s></strong> <strong style = 'color:#1414b0;'>${newPrice.toFixed(2)}
+              </strong></p>  
+              
+              `;
+        } else {
+          items += `
+
+                    <h4>${user.foodHeader}</h4> 
+                    <p class="text-grey">${user.foodName} <strong>${user.foodPrice}</strong></p>
+                    
+                    `;
+        }
+      });
+      //  document.getElementById("output").innerHTML = output;
+      document.querySelector("main").innerHTML = items;
+    });
 }
 
 // Insert foodlist into the main element in the menu section content in the index.html file
-const foodItems = createListItems(foodlist);
-document.querySelector("main").innerHTML = foodItems;
+// const foodItems = createListItems(foodlist);
+// document.querySelector("main").innerHTML = foodItems;
 
 // JavaScript for store offer
 // Declare variables, today stores todays date.

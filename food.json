@@ -1,0 +1,27 @@
+[
+  {
+    "foodHeader": "Bread Basket",
+    "foodName": "Assortment of fresh baked fruit breads and muffins",
+    "foodPrice": "5.50"
+  },
+  {
+    "foodHeader": "Honey Almond Granola with Fruits",
+    "foodName": "Natural cereal of honey toasted oats, raisins, almonds and dates",
+    "foodPrice": "7.00"
+  },
+  {
+    "foodHeader": "Belgian Waffle",
+    "foodName": "Vanilla flavored batter with malted flour",
+    "foodPrice": "7.50"
+  },
+  {
+    "foodHeader": "Scrambled eggs",
+    "foodName": "Scrambled eggs,roasted red pepper, garlic, with green onions",
+    "foodPrice": "7.50"
+  },
+  {
+    "foodHeader": "Blueberry Pancakes",
+    "foodName": "With syrup, butter and lots of berries",
+    "foodPrice": "8.50"
+  }
+]
