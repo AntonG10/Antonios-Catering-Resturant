@@ -27,54 +27,9 @@ function hamburgerControl() {
   }
 }
 
-// Food Item Multidimensional Array
-
-// Create arrays to hold food category and items
-// const foodlist = [
-//   [
-//     "Bread Basket",
-//     "Assortment of fresh baked fruit breads and muffins",
-//     "5.50",
-//   ],
-//   [
-//     "Honey Almond Granola with Fruits",
-//     "Natural cereal of honey toasted oats, raisins, almonds and dates",
-//     "7.00",
-//   ],
-//   ["Belgian Waffle", "Vanilla flavored batter with malted flour", "7.50"],
-//   [
-//     "Scrambled eggs",
-//     "Scrambled eggs,roasted red pepper, garlic, with green onions",
-//     "7.50",
-//   ],
-//   ["Blueberry Pancakes", "With syrup, butter and lots of berries", "8.50"],
-// ];
-
-// Function to iterate through the foodlist array and create html for the food items and store offer price using template literals
-// function createListItems(arr) {
-//   let items = "";
-
-//   for (let i = 0; i < arr.length; i++) {
-//     if (arr[i][2] === "5.50") {
-//       const newPrice = 5.5 - 5.5 * 0.2; // 20% off store offer
-//       items += `<h4>${arr[i][0]}</h4> <p class="text-grey">${
-//         arr[i][1]
-//       } <strong><s>${
-//         arr[i][2]
-//       }</s></strong> <strong style = 'color:#1414b0;'>${newPrice.toFixed(
-//         2
-//       )}</strong></p>`;
-//     } else {
-//       items += `<h4>${arr[i][0]}</h4> <p class="text-grey">${arr[i][1]} <strong>${arr[i][2]}</strong></p>`;
-//     }
-//   }
-//   return items;
-// }
-
 getUsers();
 function getUsers() {
-  const myRequest = new Request("food.json");
-  fetch(myRequest)
+  fetch("food.json")
     .then((res) => res.json())
     .then((data) => {
       let items = "";
@@ -99,13 +54,13 @@ function getUsers() {
                     `;
         }
       });
-      //  document.getElementById("output").innerHTML = output;
+
       document.querySelector("main").innerHTML = items;
     });
 }
 
 // Insert foodlist into the main element in the menu section content in the index.html file
-// const foodItems = createListItems(foodlist);
+// const foodItems = getUsers();
 // document.querySelector("main").innerHTML = foodItems;
 
 // JavaScript for store offer
@@ -166,8 +121,9 @@ year = weekFromToday.getFullYear();
 storeOffer = `<h4><span style = 'color: #1414b0; font: italic bold 1.5rem "Raleway", Sans-Serif; letter-spacing: .1rem;'>20%</span> Off Bread Basket Items - Offer Expires Next:</h4>
   <p class= "text-blue" style = 'letter-spacing: .1rem; font-weight: bold;'>(${day} ${month} ${date}, ${year} in 7 days!)</p>`;
 
-//The insertAdjacentHTML() method inserts the above text as HTML, into a specified position that being 'afterbegin' - After the beginning of the element (as the first child). This inserts the storeoffer text as the first child of the main element.
-document.querySelector("main").insertAdjacentHTML("afterbegin", storeOffer);
+//The insertAdjacentHTML() method inserts the above text as HTML, into a specified position that being 'beforebegin' - This inserts the storeoffer text before the main element.
+
+document.querySelector("main").insertAdjacentHTML("beforebegin", storeOffer);
 
 // Automatic Continuous Slideshow function
 // Declare variables and set initial values to zero and call functions
