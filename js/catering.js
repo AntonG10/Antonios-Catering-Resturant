@@ -26,9 +26,11 @@ function hamburgerControl() {
     waiter.className = "waiter"; // waiter.className changes class back to "waiter" this displays the waiter icon when the hamburger icon is clicked see main.css
   }
 }
+// Event listeners
+document.getElementById("getMenu").addEventListener("click", getMenu);
 
-getUsers();
-function getUsers() {
+// Get menu from JSON file and insert into web page
+function getMenu() {
   fetch("food.json")
     .then((res) => res.json())
     .then((data) => {
