@@ -26,44 +26,47 @@ function hamburgerControl() {
     waiter.className = "waiter"; // waiter.className changes class back to "waiter" this displays the waiter icon when the hamburger icon is clicked see main.css
   }
 }
-// Event listeners
-document.getElementById("getMenu").addEventListener("click", getMenu);
+// Event listeners and Selectors
+const menu = document.getElementById("menu");
+const button = document.getElementById("getMenu");
+button.addEventListener("click", getMenu);
 
-// Get menu from JSON file and insert into web page
+// Get menu from JSON file and insert into the web page
 function getMenu() {
   fetch("food.json")
     .then((res) => res.json())
     .then((data) => {
       let items = "";
+      // let itemsPic = "";
       data.forEach((user) => {
         if (user.foodPrice === "5.50") {
           const newPrice = 5.5 - 5.5 * 0.2; // 20% off store offer
           items += `
 
-              <h4>${user.foodHeader}</h4> 
-              <p class="text-grey">${user.foodName} <strong><s>${
+              <h4><img class="img-fluid food-photo img-thumbnail" src="${
+                user.photo
+              }" alt="${user.foodName}"> ${user.foodHeader}</h4> 
+              <p class="text-grey ml-3">${user.foodName} <strong><s>${
             user.foodPrice
           }</s></strong> <strong style = 'color:#1414b0;'>${newPrice.toFixed(2)}
-              </strong></p>  
+              </strong></p><hr>  
               
               `;
         } else {
           items += `
 
-                    <h4>${user.foodHeader}</h4> 
-                    <p class="text-grey">${user.foodName} <strong>${user.foodPrice}</strong></p>
+                    <h4><img class=" img-fluid food-photo img-thumbnail" src="${user.photo}" alt="${user.foodName}"> ${user.foodHeader}</h4>
+                    <p class="text-grey ml-3">${user.foodName} <strong>${user.foodPrice}</strong></p><hr>
                     
                     `;
         }
       });
 
       document.querySelector("main").innerHTML = items;
+
+      button.textContent = "Antonios Cafe Goooood Eating";
     });
 }
-
-// Insert foodlist into the main element in the menu section content in the index.html file
-// const foodItems = getUsers();
-// document.querySelector("main").innerHTML = foodItems;
 
 // JavaScript for store offer
 // Declare variables, today stores todays date.

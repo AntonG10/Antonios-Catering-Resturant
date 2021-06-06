@@ -187,6 +187,11 @@ a.icon {
 }
 /* ------------------------------- Page Elements --------------------------- */
 /* position text in the main picture and style */
+.food-photo {
+  width: 20%;
+  margin-left: 0px;
+  margin-bottom: 10px;
+}
 .main-images {
   position: relative;
 }
