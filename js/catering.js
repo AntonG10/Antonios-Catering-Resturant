@@ -34,7 +34,14 @@ button.addEventListener("click", getMenu);
 // Get menu from JSON file and insert into the web page
 function getMenu() {
   fetch("food.json")
-    .then((res) => res.json())
+    .then((res) => {
+      console.log(res);
+      if (!res.ok) {
+        // throw Error(response.status);
+        throw new Error("Network response was not ok");
+      }
+      return res.json();
+    })
     .then((data) => {
       let items = "";
       // let itemsPic = "";
@@ -63,8 +70,14 @@ function getMenu() {
       });
 
       document.querySelector("main").innerHTML = items;
-
       button.textContent = "Antonios Cafe Goooood Eating";
+    })
+    .catch((error) => {
+      // console.log(error);
+      console.error(
+        alert("There has been a problem with your fetch operation:"),
+        alert(error)
+      );
     });
 }
 
@@ -141,12 +154,26 @@ carouselC();
 
 function carouselA() {
   // This class selection represents an HTMLCollection of array-like objects called mySlides equaling four index items 0-3 four images, this is assigned to mySlidesA
-  const mySlidesA = document.getElementsByClassName("mySlidesA");
+
+  // const mySlidesA = document.getElementsByClassName("mySlidesA");
+
+  // const mySlidesA = Array.from(document.getElementsByClassName("mySlidesA"));
+
+  // const mySlidesA = [].slice.call(document.getElementsByClassName("mySlidesA"));
+
+  const mySlidesA = [...document.getElementsByClassName("mySlidesA")];
 
   // This for loop iterate through the array of objects and the mySlides.length property retrieves the number of items in the collection that the for loop compares to. This part of the code keeps the picture slides from cascading down the web page, using display = none.
-  for (let i = 0; i < mySlidesA.length; i++) {
-    mySlidesA[i].style.display = "none";
-  }
+
+  // for (let i = 0; i < mySlidesA.length; i++) {
+  //   mySlidesA[i].style.display = "none";
+  // }
+
+  // mySlidesA.forEach(function (slides) {
+  //   slides.style.display = "none";
+  // });
+
+  mySlidesA.forEach((slides) => (slides.style.display = "none"));
 
   // This part of the function continuously indexes through each slide item and displays them as the main picture on the web page for 7 seconds.  This is accomplished using the setTimeout() method that calls the function carouselA after 7000 milliseconds or 7 seconds has elasped.
   myIndexA++;
@@ -158,11 +185,14 @@ function carouselA() {
 }
 
 function carouselB() {
-  const mySlidesB = document.getElementsByClassName("mySlidesB");
+  // const mySlidesB = document.getElementsByClassName("mySlidesB");
+  const mySlidesB = [...document.getElementsByClassName("mySlidesB")];
 
-  for (let i = 0; i < mySlidesB.length; i++) {
-    mySlidesB[i].style.display = "none";
-  }
+  // for (let i = 0; i < mySlidesB.length; i++) {
+  //   mySlidesB[i].style.display = "none";
+  // }
+  mySlidesB.forEach((slides) => (slides.style.display = "none"));
+
   myIndexB++;
   if (myIndexB > mySlidesB.length) {
     myIndexB = 1;
@@ -172,11 +202,16 @@ function carouselB() {
 }
 
 function carouselC() {
-  const mySlidesC = document.getElementsByClassName("mySlidesC");
+  // const mySlidesC = document.getElementsByClassName("mySlidesC");
 
-  for (let i = 0; i < mySlidesC.length; i++) {
-    mySlidesC[i].style.display = "none";
-  }
+  const mySlidesC = [...document.getElementsByClassName("mySlidesC")];
+
+  // for (let i = 0; i < mySlidesC.length; i++) {
+  //   mySlidesC[i].style.display = "none";
+  // }
+
+  mySlidesC.forEach((slides) => (slides.style.display = "none"));
+
   myIndexC++;
   if (myIndexC > mySlidesC.length) {
     myIndexC = 1;
