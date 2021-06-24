@@ -26,60 +26,56 @@ function hamburgerControl() {
     waiter.className = "waiter"; // waiter.className changes class back to "waiter" this displays the waiter icon when the hamburger icon is clicked see main.css
   }
 }
+
 // Event listeners and Selectors
 const menu = document.getElementById("menu");
 const button = document.getElementById("getMenu");
-button.addEventListener("click", getMenu);
+// button.addEventListener("click", getMenu);
+// window.addEventListener('DOMContentLoaded', () => getMenu());
+button.addEventListener("click", () => getMenu());
 
-// Get menu from JSON file and insert into the web page
-function getMenu() {
-  fetch("food.json")
-    .then((res) => {
-      console.log(res);
-      if (!res.ok) {
-        // throw Error(response.status);
-        throw new Error("Network response was not ok");
-      }
-      return res.json();
-    })
-    .then((data) => {
-      let items = "";
-      // let itemsPic = "";
-      data.forEach((user) => {
-        if (user.foodPrice === "5.50") {
-          const newPrice = 5.5 - 5.5 * 0.2; // 20% off store offer
-          items += `
+// function to get the food menu asynchronously
+const getMenu = async () => {
+  // Setup a request using fetch to the local server with food data endpoint
+  let uri = "http://localhost:3000/food";
+
+  // Wait until we get the data response object back and store in the res const variable
+  const res = await fetch(uri);
+  console.log("This is res", res);
+
+  // Wait then using the json() method get the response object, and then pass that into a javascript array object and store that in const foodMenu
+  const foodMenu = await res.json();
+  console.log("This is foodMenu", foodMenu);
+
+  //This part of the code sets up a template stored in the variabe items then iterates the foodMenu array using the forEach method and outputing the foodMenu items into the DOM or the menu section of the webpage.
+  let items = "";
+  foodMenu.forEach((food) => {
+    if (food.foodPrice === "5.50") {
+      const newPrice = 5.5 - 5.5 * 0.2; // 20% off store offer
+      items += `
 
               <h4><img class="img-fluid food-photo img-thumbnail" src="${
-                user.photo
-              }" alt="${user.foodName}"> ${user.foodHeader}</h4> 
-              <p class="text-grey ml-3">${user.foodName} <strong><s>${
-            user.foodPrice
-          }</s></strong> <strong style = 'color:#1414b0;'>${newPrice.toFixed(2)}
-              </strong></p><hr>  
-              
+                food.photo
+              }" alt="${food.foodName}"> ${food.foodHeader}</h4>
+              <p class="text-grey ml-3">${food.foodName} <strong><s>${
+        food.foodPrice
+      }</s></strong> <strong style = 'color:#1414b0;'>${newPrice.toFixed(2)}
+              </strong></p><hr>
+
               `;
-        } else {
-          items += `
+    } else {
+      items += `
 
-                    <h4><img class=" img-fluid food-photo img-thumbnail" src="${user.photo}" alt="${user.foodName}"> ${user.foodHeader}</h4>
-                    <p class="text-grey ml-3">${user.foodName} <strong>${user.foodPrice}</strong></p><hr>
-                    
+                    <h4><img class=" img-fluid food-photo img-thumbnail" src="${food.photo}" alt="${food.foodName}"> ${food.foodHeader}</h4>
+                    <p class="text-grey ml-3">${food.foodName} <strong>${food.foodPrice}</strong></p><hr>
+
                     `;
-        }
-      });
+    }
+  });
 
-      document.querySelector("main").innerHTML = items;
-      button.textContent = "Antonios Cafe Goooood Eating";
-    })
-    .catch((error) => {
-      // console.log(error);
-      console.error(
-        alert("There has been a problem with your fetch operation:"),
-        alert(error)
-      );
-    });
-}
+  document.querySelector("main").innerHTML = items;
+  button.textContent = "Antonio's Cafe Goooood Eatin";
+};
 
 // JavaScript for store offer
 // Declare variables, today stores todays date.
@@ -148,30 +144,17 @@ document.querySelector("main").insertAdjacentHTML("beforebegin", storeOffer);
 let myIndexA = 0;
 let myIndexB = 0;
 let myIndexC = 0;
+let myIndexD = 0;
 carouselA();
 carouselB();
 carouselC();
+carouselD();
 
 function carouselA() {
-  // This class selection represents an HTMLCollection of array-like objects called mySlides equaling four index items 0-3 four images, this is assigned to mySlidesA
-
-  // const mySlidesA = document.getElementsByClassName("mySlidesA");
-
-  // const mySlidesA = Array.from(document.getElementsByClassName("mySlidesA"));
-
-  // const mySlidesA = [].slice.call(document.getElementsByClassName("mySlidesA"));
-
+  // This class selection returns array-like objects called mySlides equaling four index items 0-3 four images, this is assigned to mySlidesA
   const mySlidesA = [...document.getElementsByClassName("mySlidesA")];
 
-  // This for loop iterate through the array of objects and the mySlides.length property retrieves the number of items in the collection that the for loop compares to. This part of the code keeps the picture slides from cascading down the web page, using display = none.
-
-  // for (let i = 0; i < mySlidesA.length; i++) {
-  //   mySlidesA[i].style.display = "none";
-  // }
-
-  // mySlidesA.forEach(function (slides) {
-  //   slides.style.display = "none";
-  // });
+  // This forEach loop iterates through the array of objects. This part of the code keeps the picture slides from cascading down the web page, using display = none.
 
   mySlidesA.forEach((slides) => (slides.style.display = "none"));
 
@@ -185,12 +168,8 @@ function carouselA() {
 }
 
 function carouselB() {
-  // const mySlidesB = document.getElementsByClassName("mySlidesB");
   const mySlidesB = [...document.getElementsByClassName("mySlidesB")];
 
-  // for (let i = 0; i < mySlidesB.length; i++) {
-  //   mySlidesB[i].style.display = "none";
-  // }
   mySlidesB.forEach((slides) => (slides.style.display = "none"));
 
   myIndexB++;
@@ -202,13 +181,7 @@ function carouselB() {
 }
 
 function carouselC() {
-  // const mySlidesC = document.getElementsByClassName("mySlidesC");
-
   const mySlidesC = [...document.getElementsByClassName("mySlidesC")];
-
-  // for (let i = 0; i < mySlidesC.length; i++) {
-  //   mySlidesC[i].style.display = "none";
-  // }
 
   mySlidesC.forEach((slides) => (slides.style.display = "none"));
 
@@ -218,6 +191,19 @@ function carouselC() {
   }
   mySlidesC[myIndexC - 1].style.display = "block";
   setTimeout(carouselC, 5000);
+}
+
+function carouselD() {
+  const mySlidesD = [...document.getElementsByClassName("mySlidesD")];
+
+  mySlidesD.forEach((slides) => (slides.style.display = "none"));
+
+  myIndexD++;
+  if (myIndexD > mySlidesD.length) {
+    myIndexD = 1;
+  }
+  mySlidesD[myIndexD - 1].style.display = "block";
+  setTimeout(carouselD, 5000);
 }
 
 // This code selects two of the contact forms input elements and styles the background color lightgrey
