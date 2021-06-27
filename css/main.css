@@ -187,6 +187,13 @@ a.icon {
 }
 /* ------------------------------- Page Elements --------------------------- */
 /* position text in the main picture and style */
+.container {
+  display: block;
+  width: 100%;
+  max-width: 1200px;
+  height: auto;
+  margin: 0 auto;
+}
 .food-photo {
   width: 20%;
   margin-left: 0px;
@@ -195,14 +202,56 @@ a.icon {
 .main-images {
   position: relative;
 }
-
-.display-bottommiddle {
-  position: absolute;
-  left: 50%;
-  bottom: 0;
-  transform: translate(-50%, 0%);
+.calendar,
+.offerCalendar {
+  font-size: 1.7rem;
+  color: yellow;
+  letter-spacing: 0.5px;
+  font-family: arial;
+}
+.time {
+  font-size: 1.7rem;
+  color: rgb(243, 243, 28);
+  letter-spacing: 0.5px;
+  font-family: arial;
+}
+.temp {
+  font-size: 1.7rem;
+  color: rgb(243, 243, 28);
+  letter-spacing: 0.5px;
+  font-family: arial;
 }
 
+.display-topLeft {
+  position: absolute;
+  left: 5rem;
+  top: 9rem;
+  margin: 0;
+  padding: 0;
+  /* transform: translate(50%, 0%); */
+}
+.display-bottomLeft {
+  position: absolute;
+  left: 5rem;
+  bottom: 3.5rem;
+  /* transform: translate(50%, 0%); */
+}
+.display-bottomRight {
+  position: absolute;
+  left: 22rem;
+  bottom: 1.8rem;
+  margin: 0;
+  padding: 0;
+  /* transform: translate(50%, 0%); */
+}
+.display-bottomMiddle {
+  position: absolute;
+  left: 5rem;
+  bottom: 1.8rem;
+  margin: 0;
+  padding: 0;
+  /* transform: translate(50%, 0%); */
+}
 .display-middle {
   position: absolute;
   top: 50%;
@@ -216,7 +265,7 @@ a.icon {
 }
 
 .bg-color {
-  background-color: rgba(27, 26, 26, 0.1);
+  background-color: rgba(12, 12, 12, 0.15);
   border-radius: 3px;
 }
 

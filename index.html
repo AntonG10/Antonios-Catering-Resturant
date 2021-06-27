@@ -55,18 +55,27 @@
       </div>
 
       <!-- Main picture -->
-      <div class="main-images" style="padding-top: 6.4rem">
+      <div class="main-images container" style="padding-top: 6.4rem">
+        <div class="calendar display-bottomLeft bg-color"></div>
+        <div class="offerCalendar display-topLeft bg-color"></div>
+        <div class="time display-bottomRight bg-color"></div>
+        <div class="temp display-bottomMiddle bg-color"></div>
         <div class="display-middle text-white hide-small">
-          <h1 class="bg-color padding-RL-8" style="font-size: 5vmax">
+          <h1 class="bg-color padding-RL-8" style="font-size: 4vmax">
             Antonio's Cafe
           </h1>
           <p
             class="bg-color"
-            style="letter-spacing: 0.1rem; text-align: center; font-size: 2vmax"
+            style="
+              letter-spacing: 0.1rem;
+              text-align: center;
+              font-size: 1.5rem;
+            "
           >
             <b>The Best Fine Dining in the Ville.</b>
           </p>
         </div>
+
         <img
           class="imgResponse mySlidesC"
           src="img/pexels-waldemar-brandt-2290070blur.jpg"
@@ -388,7 +397,8 @@
       <span>&copy;2021 In the Ville - Antonio's Cafe.</span><br />
       <a class="top" href="#top">Back to top &raquo;</a>
     </footer>
-
+    <script src="http://cdn.date-fns.org/v1.9.0/date_fns.min.js"></script>
+    <script src="js/api.js"></script>
     <script src="js/catering.js"></script>
   </body>
 </html>
