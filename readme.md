@@ -42,5 +42,6 @@ Steps to load the json-server in a command terminal:
 
 \*I Created a month and day array and use these to populate the store offer.
 
-\*I used the AccWeather API to generate Louisville weather conditions inserting this into the  
- webpages main image.
+\*I used the AccWeather API to generate Louisville weather conditions inserting this into the webpages main image.
+
+\*I've implemented regex to validate and display correctly form name, email and telephone inputs. I use bootstrap tool tips as form field guides and alerts if fields are entered correctly or not.
