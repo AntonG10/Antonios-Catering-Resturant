@@ -9,10 +9,11 @@
       href="https://fonts.googleapis.com/css?family=Raleway:500|Vollkorn:400i"
       rel="stylesheet"
     />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
     <link rel="stylesheet" href="css/bootstrap.css" />
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/main.css" />
-
     <script
       src="https://kit.fontawesome.com/95583fc785.js"
       crossorigin="anonymous"
@@ -60,6 +61,9 @@
         <div class="offerCalendar display-topLeft bg-color"></div>
         <div class="time display-bottomRight bg-color"></div>
         <div class="temp display-bottomMiddle bg-color"></div>
+        <div class="iconWeather display-inconPosition">
+          <img src="" alt="" />
+        </div>
         <div class="display-middle text-white hide-small">
           <h1 class="bg-color padding-RL-8" style="font-size: 4vmax">
             Antonio's Cafe
@@ -81,11 +85,7 @@
           src="img/pexels-waldemar-brandt-2290070blur.jpg"
           alt="Cafe Bar Setting"
         />
-        <img
-          class="imgResponse mySlidesC"
-          src="img/pexels-daria-shevtsova-704982BB.jpg"
-          alt="Cafe Bar Setting"
-        />
+
         <img
           class="imgResponse mySlidesC"
           src="img/pexels-kaboompics-com-6267BB.jpg"
@@ -317,14 +317,58 @@
             consequat.
           </p>
 
-          <form id="myForm" action="/action_page.php" target="_blank">
+          <form class="signup-form" id="myForm">
+            <div class="nameFeedback"></div>
             <p>
               <input
                 class="form-input padding-16"
-                type="text"
+                data-toggle="tooltip"
+                data-placement="right"
+                data-html="true"
+                title="Name <u>must</u> contain <em>letters/spaces</em> & be between <em>6 & 20</em> characters."
+                id="username"
                 placeholder="Name"
                 required
                 name="Name"
+                autocomplete="off"
+                onfocus="this.value=''"
+              />
+            </p>
+            <div class="emailFeedback"></div>
+            <p>
+              <input
+                class="form-input padding-16"
+                data-toggle="tooltip"
+                data-placement="right"
+                data-html="true"
+                title="Must be a valid email address"
+                id="email"
+                placeholder="Email"
+                required
+                name="email"
+                autocomplete="off"
+                onfocus="this.value=''"
+              />
+            </p>
+
+            </p>
+            <div class="telephoneFeedback"></div>
+            <p>
+              <input
+                class="form-input padding-16"
+                data-toggle="tooltip"
+                data-placement="right"
+                data-html="true"
+                title="The telephone number must be in the format of</br> (123) 456-7890<br/>
+                 123-456-7890<br/>
+                 123.456.7890<br/>
+                 1234567890"
+                id="telephone"
+                placeholder="Telephone"
+                required
+                name="telephone"
+                autocomplete="off"
+                onfocus="this.value=''"
               />
             </p>
             <p>
@@ -351,13 +395,14 @@
                 class="form-input padding-16"
                 type="text"
                 placeholder="Message \ Special requirements"
-                required
+                autocomplete="off"
                 name="Message"
               />
             </p>
             <p>
               <button class="form-button" type="submit">SEND MESSAGE</button>
             </p>
+            <div class="feedback"></div>
           </form>
         </div>
         <!-- end contact Form Section -->
@@ -397,8 +442,11 @@
       <span>&copy;2021 In the Ville - Antonio's Cafe.</span><br />
       <a class="top" href="#top">Back to top &raquo;</a>
     </footer>
+
     <script src="http://cdn.date-fns.org/v1.9.0/date_fns.min.js"></script>
-    <script src="js/api.js"></script>
-    <script src="js/catering.js"></script>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="js/api.js"></script>
+    <script type="text/javascript" src="js/catering.js"></script>
   </body>
 </html>

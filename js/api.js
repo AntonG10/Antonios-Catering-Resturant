@@ -51,11 +51,12 @@ const getMenu = async () => {
   });
 
   document.querySelector("main").innerHTML = items;
-  button.textContent = "Antonio's Cafe Goooood Eatin";
+  button.innerText = "Antonio's Cafe Goooood Eatin";
 };
 
 // Code to fetch AccWeather API
 const temp = document.querySelector(".temp");
+const icon = document.querySelector(".iconWeather img");
 
 // AccWeather authorization key
 const key = "Eb1NlT5byCyGoBYO8yQht4VU0RTn7Uym";
@@ -67,6 +68,11 @@ const updateWeather = (data) => {
   <span>${weather.Temperature.Imperial.Value}</span><span>&deg;F ${weather.WeatherText}</span>
  `;
   temp.innerHTML = htmlTemp;
+
+  // update icon images
+  const iconSrc = `img/imgIcon/icons/${weather.WeatherIcon}.svg`;
+
+  icon.setAttribute("src", iconSrc);
 
   // console.log(weather);
   // console.log(weather.Temperature.Imperial.Value);

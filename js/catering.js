@@ -27,56 +27,6 @@ function hamburgerControl() {
   }
 }
 
-// Event listeners and Selectors
-const menu = document.getElementById("menu");
-const button = document.getElementById("getMenu");
-// button.addEventListener("click", getMenu);
-// window.addEventListener('DOMContentLoaded', () => getMenu());
-button.addEventListener("click", () => getMenu());
-
-// function to get the food menu asynchronously
-const getMenu = async () => {
-  // Setup a request using fetch to the local server with food data endpoint
-  let uri = "http://localhost:3000/food";
-
-  // Wait until we get the data response object back and store in the res const variable
-  const res = await fetch(uri);
-  console.log("This is res", res);
-
-  // Wait then using the json() method get the response object, and then pass that into a javascript array object and store that in const foodMenu
-  const foodMenu = await res.json();
-  console.log("This is foodMenu", foodMenu);
-
-  //This part of the code sets up a template stored in the variabe items then iterates the foodMenu array using the forEach method and outputing the foodMenu items into the DOM or the menu section of the webpage.
-  let items = "";
-  foodMenu.forEach((food) => {
-    if (food.foodPrice === "5.50") {
-      const newPrice = 5.5 - 5.5 * 0.2; // 20% off store offer
-      items += `
-
-              <h4><img class="img-fluid food-photo img-thumbnail" src="${
-                food.photo
-              }" alt="${food.foodName}"> ${food.foodHeader}</h4>
-              <p class="text-grey ml-3">${food.foodName} <strong><s>${
-        food.foodPrice
-      }</s></strong> <strong style = 'color:#1414b0;'>${newPrice.toFixed(2)}
-              </strong></p><hr>
-
-              `;
-    } else {
-      items += `
-
-                    <h4><img class=" img-fluid food-photo img-thumbnail" src="${food.photo}" alt="${food.foodName}"> ${food.foodHeader}</h4>
-                    <p class="text-grey ml-3">${food.foodName} <strong>${food.foodPrice}</strong></p><hr>
-
-                    `;
-    }
-  });
-
-  document.querySelector("main").innerHTML = items;
-  button.textContent = "Antonio's Cafe Goooood Eatin";
-};
-
 // JavaScript for store offer
 // Declare variables, today stores todays date.
 let weekFromToday, day, date, month, year, monthNames, dayNames;
@@ -138,6 +88,41 @@ storeOffer = `<h4><span style = 'color: #1414b0; font: italic bold 1.5rem "Ralew
 //The insertAdjacentHTML() method inserts the above text as HTML, into a specified position that being 'beforebegin' - This inserts the storeoffer text before the main element.
 
 document.querySelector("main").insertAdjacentHTML("beforebegin", storeOffer);
+
+//Digital Clock function and welcome greeting
+
+const offerCalendar = document.querySelector(".offerCalendar");
+const mainCalendar = document.querySelector(".calendar");
+const timeClock = document.querySelector(".time");
+
+const mainGreeting = (welcome, oneweek, calendar) => {
+  const tick = () => {
+    const now = new Date();
+    // console.log(dateFns.isToday(now));
+    const time = dateFns.format(now, "hh:mm:ss A");
+    const htmlTime = `
+  <span>${time}</span>
+ `;
+    timeClock.innerHTML = htmlTime;
+  };
+  setInterval(tick, 1000);
+
+  const htmlCalendar = `
+    <p>${welcome} ${calendar}</p>
+    
+  `;
+  const htmlOfferCalendar = `
+    <p > <strong style = ' font: italic bold 1.7rem "Raleway", Sans-Serif; letter-spacing: .1rem;'>20% Off</strong> Store Offer Ends <strong>${oneweek}</strong></p>
+  `;
+  mainCalendar.innerHTML = htmlCalendar;
+  offerCalendar.innerHTML = htmlOfferCalendar;
+};
+const now = new Date();
+const sevenDays = dateFns.addDays(now, 7);
+const oneWeek = dateFns.format(sevenDays, "ddd MMM-Do, YYYY");
+const calendar = dateFns.format(now, "ddd MMM-Do, YYYY");
+
+mainGreeting("Welcome to the Cafe", oneWeek, calendar);
 
 // Automatic Continuous Slideshow function
 // Declare variables and set initial values to zero and call functions
@@ -207,10 +192,149 @@ function carouselD() {
 }
 
 // This code selects two of the contact forms input elements and styles the background color lightgrey
-const input = document.querySelectorAll(".form-input");
-input[0].style.backgroundColor = "lightgrey";
-input[0].style.color = "blue";
-input[2].style.backgroundColor = "lightgrey";
+// const input = document.querySelectorAll(".form-input");
+// input[0].style.backgroundColor = "lightgrey";
+// input[0].style.color = "blue";
+// input[2].style.backgroundColor = "lightgrey";
+
+const form = document.querySelector(".signup-form");
+// const phoneInput = document.querySelector("input[type="Telephone"]");
+const nameFeedback = document.querySelector(".nameFeedback");
+const emailFeedback = document.querySelector(".emailFeedback");
+const telephoneFeedback = document.querySelector(".telephoneFeedback");
+const usernamePattern = /^[a-z A-Z]{6,20}$/;
+const emailPattern = /^[^@]+@[^@.]+\.[a-z]+$/i;
+const telephonePattern = /^\D*(\d{3})\D*(\d{3})\D*(\d{4})\D*$/;
+
+form[0].style.backgroundColor = "lightgrey";
+form[2].style.backgroundColor = "lightgrey";
+form[4].style.backgroundColor = "lightgrey";
+
+// form uersname validation
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const username = form.username.value;
+  if (usernamePattern.test(username)) {
+    nameFeedback.setAttribute(
+      "class",
+      "alert alert-success  form-input padding-16 "
+    );
+    nameFeedback.textContent = "That name is valid!";
+  } else {
+    nameFeedback.setAttribute(
+      "class",
+      "alert alert-danger form-input padding-16 "
+    );
+    nameFeedback.innerHTML =
+      "Name must contain only <strong>letters/spaces</strong> & be between <strong>6 & 20</strong> characters";
+  }
+});
+
+// form email validation
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const email = form.email.value;
+  if (emailPattern.test(email)) {
+    emailFeedback.setAttribute(
+      "class",
+      "alert alert-success  form-input padding-16 "
+    );
+    emailFeedback.textContent = "That email is valid!";
+  } else {
+    emailFeedback.setAttribute(
+      "class",
+      "alert alert-danger form-input padding-16 "
+    );
+    emailFeedback.innerHTML = "Email is <strong>not valid!</strong>";
+  }
+});
+
+// form telephone validation
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const telephone = form.telephone.value;
+  if (telephonePattern.test(telephone)) {
+    telephoneFeedback.setAttribute(
+      "class",
+      "alert alert-success  form-input padding-16 "
+    );
+    telephoneFeedback.textContent = "That phone number is valid!";
+  } else {
+    telephoneFeedback.setAttribute(
+      "class",
+      "alert alert-danger form-input padding-16 "
+    );
+    telephoneFeedback.innerHTML = `The telephone number must be in the format of <br/> (123) 456-7890<br/>
+          123-456-7890<br/>
+          123.456.7890<br/>
+          1234567890`;
+  }
+});
+
+//form username live feedback
+
+form.username.addEventListener("keydown", (e) => {
+  // console.log(e.target.value, form.username.value);
+  if (usernamePattern.test(e.target.value)) {
+    //console.log('passed');
+    form.username.setAttribute(
+      "class",
+      "bg-success text-white form-input padding-16 "
+    );
+  } else {
+    //console.log('failed');
+    form.username.setAttribute(
+      "class",
+      "bg-danger text-white form-input padding-16"
+    );
+  }
+});
+
+//form email live feedback
+
+form.email.addEventListener("keydown", (e) => {
+  // console.log(e.target.value, form.username.value);
+  if (emailPattern.test(e.target.value)) {
+    //console.log('passed');
+    form.email.setAttribute(
+      "class",
+      "bg-success text-white form-input padding-16 "
+    );
+  } else {
+    //console.log('failed');
+    form.email.setAttribute(
+      "class",
+      "bg-danger text-white form-input padding-16"
+    );
+  }
+});
+
+//form telephone live feedback
+
+form.telephone.addEventListener("keyup", (e) => {
+  // console.log(e.target.value, form.username.value);
+
+  if (telephonePattern.test(e.target.value)) {
+    //console.log('passed');
+    form.telephone.setAttribute(
+      "class",
+      "bg-success text-white form-input padding-16 "
+    );
+  } else {
+    //console.log('failed');
+    form.telephone.setAttribute(
+      "class",
+      "bg-danger text-white form-input padding-16"
+    );
+  }
+});
+
+// Bootstrap tooltip using jquery
+$(document).ready(function () {
+  $('[data-toggle="tooltip"]').tooltip({
+    trigger: "toggle",
+  });
+});
 
 // Reload the web page every hour to update the store offer
 setInterval(() => {
