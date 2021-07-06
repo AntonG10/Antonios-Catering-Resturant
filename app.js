@@ -8,6 +8,7 @@ const app = express();
 const dburi =
   "mongodb+srv://anton12:607bce@fooddb.egp8c.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 
+// EJS Templates are processed through the EJS view engine on the server.  This whole process is called server side rendering.
 // register view engine
 app.set("view engine", "ejs");
 
@@ -16,9 +17,9 @@ app.listen(3000);
 
 //middleware & static Files
 app.use(express.static("public"));
-app.use("/css", express.static(__dirname + "public/css"));
-app.use("/js", express.static(__dirname + "public/js"));
-app.use("/img", express.static(__dirname + "public/img"));
+// app.use("/css", express.static(__dirname + "public/css"));
+// app.use("/js", express.static(__dirname + "public/js"));
+// app.use("/img", express.static(__dirname + "public/img"));
 app.use(morgan("dev"));
 
 // get handlers
@@ -44,4 +45,3 @@ app.use((req, res) => {
   ];
   res.status(404).render("404", { title: "404", blogs });
 });
-// EJS Templates are processed through the EJS view engine on the server.  This whole process is called server side rendering.

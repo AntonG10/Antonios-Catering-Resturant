@@ -213,16 +213,16 @@ a.icon {
 }
 
 .iconWeather {
-  /* background-color: rgba(241, 239, 64, 0.55); */
-  background-color: rgba(94, 188, 243, 0.55);
+  background-color: rgba(17, 34, 112, 1);
+  /* background-color: rgba(94, 188, 243, 0.55); */
   border-radius: 50%;
-  width: 50px;
+  width: 55px;
 }
 
 .display-inconPosition {
   position: absolute;
   left: 3rem;
-  bottom: 1.5rem;
+  bottom: 2rem;
   margin: 0;
   padding: 0;
   /* transform: translate(50%, 0%); */
@@ -259,7 +259,7 @@ a.icon {
 .display-bottomLeft {
   position: absolute;
   left: 3rem;
-  bottom: 3.5rem;
+  bottom: 4rem;
   /* transform: translate(50%, 0%); */
 }
 .display-bottomRight {
@@ -574,6 +574,9 @@ viewport width is equal to or narrower than 702px: */
     color: white;
     /* filter: sepia(50%); */
     filter: grayscale(50%);
+  }
+  .tooltip {
+    display: none !important;
   }
 }
 
