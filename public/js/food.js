@@ -6,12 +6,11 @@ button.addEventListener("click", getMenu);
 // Get menu from JSON file and insert into the web page
 
 function getMenu() {
-  fetch("food.json")
+  fetch("./food.json")
     .then((res) => res.json())
     .then((data) => {
       console.log(data);
       let items = "";
-      // let itemsPic = "";
       data.forEach((user) => {
         if (user.foodPrice === "5.50") {
           const newPrice = 5.5 - 5.5 * 0.2; // 20% off store offer

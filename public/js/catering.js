@@ -31,6 +31,7 @@ function hamburgerControl() {
 // Declare variables, today stores todays date.
 let weekFromToday, day, date, month, year, monthNames, dayNames;
 let storeOffer = "";
+
 // creates a new date object with the current date and time:
 let today = new Date();
 
@@ -90,7 +91,6 @@ storeOffer = `<h4><span style = 'color: #1414b0; font: italic bold 1.5rem "Ralew
 document.querySelector("main").insertAdjacentHTML("beforebegin", storeOffer);
 
 //Digital Clock function and welcome greeting
-
 const offerCalendar = document.querySelector(".offerCalendar");
 const mainCalendar = document.querySelector(".calendar");
 const timeClock = document.querySelector(".time");
@@ -191,14 +191,8 @@ function carouselD() {
   setTimeout(carouselD, 5000);
 }
 
-// This code selects two of the contact forms input elements and styles the background color lightgrey
-// const input = document.querySelectorAll(".form-input");
-// input[0].style.backgroundColor = "lightgrey";
-// input[0].style.color = "blue";
-// input[2].style.backgroundColor = "lightgrey";
-
+// Form selectors and regex patterns
 const form = document.querySelector(".signup-form");
-// const phoneInput = document.querySelector("input[type="Telephone"]");
 const nameFeedback = document.querySelector(".nameFeedback");
 const emailFeedback = document.querySelector(".emailFeedback");
 const telephoneFeedback = document.querySelector(".telephoneFeedback");
@@ -206,6 +200,7 @@ const usernamePattern = /^[a-z A-Z]{6,20}$/;
 const emailPattern = /^[^@]+@[^@.]+\.[a-z]+$/i;
 const telephonePattern = /^\D*(\d{3})\D*(\d{3})\D*(\d{4})\D*$/;
 
+// This code selects two of the contact forms input elements and styles the background color lightgrey
 form[0].style.backgroundColor = "lightgrey";
 form[2].style.backgroundColor = "lightgrey";
 form[4].style.backgroundColor = "lightgrey";
@@ -214,6 +209,7 @@ form[4].style.backgroundColor = "lightgrey";
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   const username = form.username.value;
+  //Test to see if username input value is true or false and then display deciding bootstrap alert
   if (usernamePattern.test(username)) {
     nameFeedback.setAttribute(
       "class",
@@ -225,8 +221,7 @@ form.addEventListener("submit", (e) => {
       "class",
       "alert alert-danger form-input padding-16 "
     );
-    nameFeedback.innerHTML =
-      "Name must contain only <strong>letters/spaces</strong> & be between <strong>6 & 20</strong> characters";
+    nameFeedback.innerHTML = `Name must contain only <strong>letters/spaces</strong> & be between <strong>6 & 20</strong> characters`;
   }
 });
 
@@ -234,6 +229,7 @@ form.addEventListener("submit", (e) => {
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   const email = form.email.value;
+  //Test to see if email input value is true or false and then display deciding bootstrap alert
   if (emailPattern.test(email)) {
     emailFeedback.setAttribute(
       "class",
@@ -245,7 +241,7 @@ form.addEventListener("submit", (e) => {
       "class",
       "alert alert-danger form-input padding-16 "
     );
-    emailFeedback.innerHTML = "Email is <strong>not valid!</strong>";
+    emailFeedback.innerHTML = `Email is <strong>not valid!</strong>`;
   }
 });
 
@@ -253,6 +249,7 @@ form.addEventListener("submit", (e) => {
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   const telephone = form.telephone.value;
+  //Test to see if telephone input value is true or false and then display deciding bootstrap alert
   if (telephonePattern.test(telephone)) {
     telephoneFeedback.setAttribute(
       "class",
@@ -264,15 +261,15 @@ form.addEventListener("submit", (e) => {
       "class",
       "alert alert-danger form-input padding-16 "
     );
-    telephoneFeedback.innerHTML = `The telephone number must be in the format of <br/> (123) 456-7890<br/>
-          123-456-7890<br/>
-          123.456.7890<br/>
-          1234567890`;
+    telephoneFeedback.innerHTML = `The telephone number must be in the format of <br/><strong>(123) 456-7890</strong><br/>
+          <strong>123-456-7890</strong><br/>
+          <strong>123.456.7890</strong><br/>
+          <strong>1234567890</strong>`;
   }
 });
 
 //form username live feedback
-
+//Test to see if username input is true or false if true turn form field green if false turn red
 form.username.addEventListener("keydown", (e) => {
   // console.log(e.target.value, form.username.value);
   if (usernamePattern.test(e.target.value)) {
@@ -291,7 +288,7 @@ form.username.addEventListener("keydown", (e) => {
 });
 
 //form email live feedback
-
+//Test to see if email input is true or false if true turn form field green if false turn red
 form.email.addEventListener("keydown", (e) => {
   // console.log(e.target.value, form.username.value);
   if (emailPattern.test(e.target.value)) {
@@ -310,7 +307,7 @@ form.email.addEventListener("keydown", (e) => {
 });
 
 //form telephone live feedback
-
+//Test to see if telephone input is true or false if true turn form field green if false turn red
 form.telephone.addEventListener("keyup", (e) => {
   // console.log(e.target.value, form.username.value);
 

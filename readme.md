@@ -13,35 +13,32 @@ I use Java script to reload the web page every hour to update the store offer.
 
 JavaScript Feature List.
 
-\*To load the food menu on my webpage with a external json file:
-I use the JSONServer package installed on a computer with npm. You will need to have nodejs installed to use it. This package allows us to easily create a dummy local rest api to mimic a backend server for web development and prototyping. We can then just create a simple json file to store our data and then the json server will take that file and wrap it with api endpoints on a local server for us to interact with so we can send get, post delete and patch requests etc... to interact with the json file.
+\*I use Express to create a web server that connects a route or handler to the html.index web page.
 
-Steps to load the json-server in a command terminal:
+Steps to load the html webpage open a command terminal in the project directory:
 
 1. Load node.js onto your computer that will include the npm package  
    manager.
-2. Install JSON Server with the following terminal command:
+2. Type: npm install
 
-   npm install -g json-server
+   That will install package.json dependencies.
 
-3. Start JSON Server:
-   Open a terminal in the project directory and run the following command to watch the foodDb.json file:
+3. Start the Server:
+   In the opened terminal in the project directory run the following command:
 
-   json-server --watch data/foodDb.json
+   node app
 
-   Then you will see in the terminal resources you can interact with. The server it is serving from is with the foodDb endpoint:
+   The server it is serving from:
 
-   http://localhost:3000/foodDb
+   http://localhost:3000
+   Type that url into your web browser to display the webpage.
 
-   If you alt + click or copy the path of the localhost server into a web brower you will see the foodDb json file.
+\*I use java script to calculate and populate the store offer on the food menu section of the web page showing the remaining seven days of the store offer based on the current date.
 
-4. Next when you load the website and click on the View The Menu  
-   button it loads the foodDb json file using template literals to inject it into the webpage in the menu section showing the food menu with images.
+\*I Created a month and day array and use these to populate the day and date of the store offer.
 
-\*I use java script to calculate and populate the store offer on the food menu section of the web page showing the remaining days of the store offer.
-
-\*I Created a month and day array and use these to populate the store offer.
-
-\*I used the AccWeather API to generate Louisville weather conditions inserting this into the webpages main image.
+\*I use the AccuWeather API to generate Louisville weather conditions inserting this into the webpages main image.
 
 \*I've implemented regex to validate and display correctly form name, email and telephone inputs. I use bootstrap tool tips as form field guides and alerts if fields are entered correctly or not.
+
+\* I've created a food.json external file that is read and that populates the food items in the web pages food menu section. The javascript that codes thisis in the food.js file.
