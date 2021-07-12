@@ -19,7 +19,10 @@ Steps to load the html webpage open a command terminal in the project directory:
 
 1. Load node.js onto your computer that will include the npm package  
    manager.
-2. Type: npm install
+2. From the project folder - Antonios-Catering-Resturant, open a command terminal and  
+   Type:
+
+   npm install
 
    That will install package.json dependencies.
 
@@ -41,4 +44,4 @@ Steps to load the html webpage open a command terminal in the project directory:
 
 \*I've implemented regex to validate and display correctly form name, email and telephone inputs. I use bootstrap tool tips as form field guides and alerts if fields are entered correctly or not.
 
-\* I've created a food.json external file that is read and that populates the food items in the web pages food menu section. The javascript that codes thisis in the food.js file.
+\* I've created a food.json external file that is read and that populates the food items in the web pages food menu section. The javascript that codes this is in the food.js file.
